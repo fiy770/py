@@ -27,7 +27,6 @@ for file in files:
             f_error.writelines(fname+"\n")
     else :
         break
-        print(123)
 f_error.close()
 
 
