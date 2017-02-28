@@ -5,13 +5,20 @@ from bs4 import BeautifulSoup
 import urllib
 
 cs_url ='http://www.javlibrary.com/tw/vl_searchbyid.php'
-
+cur_path= 'E:\BaiduYunDownload\新增資料夾 (2)'
 f_error = open("error.txt","a")
-cur_path = os.getcwd() #得知目前路徑
+#cur_path = os.getcwd() #得知目前路徑
 files = os.listdir(cur_path)  
 for file in files:
     if file !="" :
         fname=os.path.splitext(file)[0]
+        fname2=''
+        for word in fname :
+            if(word!= '.') :
+                fname2 = fname2 + word
+            else :
+                fname=fname2
+                break
         param ={'keyword':fname}
         r = requests.get(cs_url, params = param)
         bs = BeautifulSoup(r.text,"html.parser")
