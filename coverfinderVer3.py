@@ -6,7 +6,9 @@ import urllib
 
 cs_url ='http://www.javlibrary.com/tw/vl_searchbyid.php'
 cur_path= 'E:\BaiduYunDownload\新增資料夾 (2)'
-f_error = open("error.txt","a")
+pic_path= cur_path
+error_path= cur_path
+f_error = open(error_path+"\\"+"error.txt","a")
 #cur_path = os.getcwd() #得知目前路徑
 files = os.listdir(cur_path)  
 for file in files:
@@ -27,11 +29,11 @@ for file in files:
             url=link.get('src')
             pngweb = urllib.request.urlopen(url)
             pngin = pngweb.read()
-            with open(fname+".jpg","wb") as code:
+            with open(pic_path+"\\"+fname+".jpg","wb") as code:
                 code.write(pngin)
         else :
             print(fname)
-            f_error.writelines(fname+"\n")
+            f_error.writelines(cur_path+"\\"+fname+"\n")
     else :
         break
 f_error.close()
