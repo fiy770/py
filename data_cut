@@ -1,0 +1,9 @@
+f_out=open ("word.txt","a")
+while 1:
+    sentence = input ()
+    if sentence == "stop":
+        break
+    wordnow=sentence.split(",")[0]
+    f_out.writelines(wordnow+"\n")
+f_out.close()
+
