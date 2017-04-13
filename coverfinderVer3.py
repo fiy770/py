@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import urllib
 
 cs_url ='http://www.javlibrary.com/tw/vl_searchbyid.php'
-cur_path= 'D:\\NB\新增資料夾 (3)'
+cur_path= ''
 pic_path= cur_path
 error_path= cur_path
 f_error = open(error_path+"\\"+"error.txt","a")
