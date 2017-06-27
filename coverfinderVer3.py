@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 import urllib
 
 cs_url ='http://www.javlibrary.com/tw/vl_searchbyid.php'
-cur_path= ''
-pic_path= cur_path
+cur_path= 'E:\\259LUXU\新增資料夾'
+pic_path= 'E:\D\\Newcover'
 error_path= cur_path
 f_error = open(error_path+"\\"+"error.txt","a")
 #cur_path = os.getcwd() #得知目前路徑
@@ -21,6 +21,7 @@ for file in files:
             else :
                 fname=fname2
                 break
+        fname=fname.upper()
         param ={'keyword':fname}
         r = requests.get(cs_url, params = param)
         bs = BeautifulSoup(r.text,"html.parser")
